@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>AJIS Mobile</title>
+    <meta name="description" content="AJIS Mobile" />
+    <meta name="keywords" content="AJIS Mobile, AJIS, AJIS INTRA" />
+    <meta name="author" content="AJIS" />
+   
+
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	<link rel="icon" type="image/png" href="../favicon.ico" />
+<style>
+.main-section{
+    background-size:100% 100%;
+    bottom:0px;
+    top:0px;
+    margin: 0px;
+    position:absolute;
+    width: 100%;
+}
+.user-login-header,.login-image-main{
+    margin-top: 15px;
+}
+.user-login-header h1{
+    font-size: 45px;
+    color:#fff;
+}
+.user-login-header p,.last-part p{
+    color:#c9c5c7;
+}
+.user-login-header span{
+    color:#fff;
+    font-weight: 600;
+}
+.login-image-main{
+    padding: 30px;
+    background-color:#fff;
+    border-radius:5px;
+    box-shadow: 0 0 5px 0 #fff;
+}
+.user-image-section img{
+    background-color:#4bbded !important;
+    padding:30px;
+    height:150px;
+    width:500px;
+}
+.user-login-box,.last-part{
+    padding:20px;
+}
+.user-login-box a,.user-login-box a:hover{
+    background-color: #4bbded ;
+    border:1px solid #4bbded ;
+    width: 100%;
+    color:#fff;
+    font-weight:600;
+}
+.last-part a{
+    text-decoration: none;
+    color:#B56162;
+}
+
+
+</style>
+<script>
+    function login(){
+        if($("#login_id").val()=="" || $("#login_pw").val() ==""){
+            alert("Please Check Id or password!!");
+            $("#login_pw").val("")
+            $("#login_pw").focus();
+            return ;
+        }
+        $("#frm").submit();
+    }
+
+    $(document).ready(function(){
+        $("#login_id").focus();
+
+        $(document).on("click touchstart","#btn_login",function(){  
+            login();
+        });
+
+    });
+
+    $(document).ready(function(){
+        $("#login_id").keypress(function (e) {
+            if (e.which == 13){
+                    login();  // 실행할 이벤트
+            }
+        });
+
+        $("#login_pw").keypress(function (e) {
+            if (e.which == 13){
+                    login();  // 실행할 이벤트
+            }
+        });
+
+    });
+
+    $(document).ready(function(){
+            // 브라우저 및 버전을 구하기 위한 변수들.
+            var agent = navigator.userAgent.toLowerCase(),
+                name = navigator.appName,
+                browser;
+            
+            // MS 계열 브라우저를 구분하기 위함.
+            if(name === 'Microsoft Internet Explorer' || agent.indexOf('trident') > -1 || agent.indexOf('edge/') > -1) {
+                browser = 'ie';
+                if(name === 'Microsoft Internet Explorer') { // IE old version (IE 10 or Lower)
+                    agent = /msie ([0-9]{1,}[\.0-9]{0,})/.exec(agent);
+                    browser += parseInt(agent[1]);
+                    
+                    if(browser!="ie11"){
+                        alert("브라우저를 최신버전으로 사용하여야 합니다. 아래 첨부파일을 다운로드 후 설치하여 주세요.");
+                        location.href="http://download.microsoft.com/download/C/4/C/C4C088A7-7F88-4C45-9E63-169DD4D4FD50/IE11-Windows6.1-x86-ko-kr.exe";
+                    }
+                } else { // IE 11+
+                    if(agent.indexOf('trident') > -1) { // IE 11 
+                        browser += 11;
+                    } else if(agent.indexOf('edge/') > -1) { // Edge
+                        browser = 'edge';
+                    }
+                }
+
+            } else if(agent.indexOf('safari') > -1) { // Chrome or Safari
+                if(agent.indexOf('opr') > -1) { // Opera
+                    browser = 'opera';
+                } else if(agent.indexOf('chrome') > -1) { // Chrome
+                    browser = 'chrome';
+                } else { // Safari
+                    browser = 'safari';
+                }
+            } else if(agent.indexOf('firefox') > -1) { // Firefox
+                browser = 'firefox';
+            }
+
+            //TODO : download file
+            // IE: ie7~ie11, Edge: edge, Chrome: chrome, Firefox: firefox, Safari: safari, Opera: opera
+            //document.getElementsByTagName('html')[0].className = browser;
+        });
+
+</script>
+</head>
+<body>
+<div class="container main-section">
+	<div class="row">
+		<div class="col-md-12 text-center user-login-header user-login-box">
+			<h1>Login Form</h1>
+            
+		</div>
+	</div>
+
+    <form id="frm" method="post">
+    
+	<div class="row">
+		<div class="col-md-4 col-sm-8 col-xs-12 col-md-offset-4 col-sm-offset-2 login-image-main text-center">
+			<div class="row">
+				<div class="col-md-12 col-sm-12 col-xs-12 user-image-section">
+				</div>
+
+
+
+				<div class="col-md-12 col-sm-12 col-xs-12 user-login-box">
+                
+					<img style="width:300px" src="0_mobile/images/ajislogo_new.png">
+					<div class="form-group">
+				  		<input type="text" class="form-control" placeholder="사번" name="login_id" id ="login_id" >
+					</div>
+					<div class="form-group">
+				  		<input type="password" class="form-control" placeholder="대소문자를 구문해서 입력해주세요"  name="login_pw" id="login_pw">
+                          비밀번호를 입력해주세요.
+                       
+					</div>
+					<a href="#" id="btn_login" class="btn btn-defualt">Login</a>
+                    <%= @noUser %>
+                       </br></br>
+                            <a href="/2.pdf"   style="background-color: #ff9800" class="btn btn-defualt">업무(사용법)매뉴얼</a></br></br>
+                            <a href="/1.pdf"   style="background-color: #ff9800" class="btn btn-defualt">스크린 화면반전 조치</a></br></br>
+                            <a href="/3.pdf"   style="background-color: #ff9800" class="btn btn-defualt">상품목록 리스트</a>
+
+				</div>				
+			</div>
+		</div>
+	</div>
+
+    </form>
+
+</div>
+</body>
+</html>
