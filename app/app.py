@@ -15,6 +15,10 @@ def index():
 def register():
     return render_template('register.html')
 
+@app.route('/admin')
+def adiministrator():
+    return render_template('administrator.html')
+
 
 # 현재있는 파일의 디렉토리 절대경로
 #basdir = os.path.abspath(os.path.dirname(__file__))
