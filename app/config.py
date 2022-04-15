@@ -6,7 +6,7 @@ import pymssql
 host = "211.117.60.37"         
 user = "ajis"          
 password = "@jis2021!"    
-database = "ajis"     
+database = "magesty"     
 
 # Database connection
 db=pymssql.connect(
@@ -18,5 +18,5 @@ db=pymssql.connect(
 
 # pymssql
 #engine = create_engine('mssql+pymssql://{user}:{password}@{host}/{database}')
-cursor=db.cursor()
-print(cursor)
+#cursor=db.cursor()
+#print(cursor)
