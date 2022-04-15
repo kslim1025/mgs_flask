@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+    <title>마제스티 회원가입</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+	  <link rel="stylesheet" type="text/css" href="../static/css/font-awesome.min.css">
+    <script src="../static/js/jquery-2.2.4.min.js"></script>
+    <style>
+        .container{
+          padding: 30px;
+          background-color:#F5F5F5;
+          border-radius:5px;
+          box-shadow: 0 0 5px 0 #F5F5F5;
+        }
+        .card-registration .select-input.form-control[readonly]:not([disabled]) {
+          font-size: 1rem;
+          line-height: 2.15;
+          padding-left: .75em;
+          padding-right: .75em;
+        }
+        .card-registration .select-arrow {
+          top: 13px;
+        }
+
+        .btn-color{
+          background-color:#0D6EFC;
+          color:#fff;
+        }
+    </style>
+</head>
+<body class="container">
+<section class="container">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+        <div class="card card-registration my-4">
+          <div class="row g-0">
+            <div class="col-xl-6 d-none d-xl-block">
+              <img
+                src="../static/img/regist.png"
+                alt="Register photo"
+                class="img-fluid"
+                style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem; width:100%; height:100%"
+              />
+            </div>
+            <div class="col-xl-6">
+              <div class="card-body p-md-5 text-black">
+                <h3 class="mb-5 text-uppercase">회원가입</h3>
+
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+                      <label class="form-label" for="form3Example1m">성함</label>
+                      <input type="text" id="form3Example1m" class="form-control form-control-lg" />
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+                      <label class="form-label" for="form3Example1n">소속</label>
+                      <input type="text" id="form3Example1n" class="form-control form-control-lg" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+                      <label class="form-label" for="form3Example1m1">비밀번호</label>
+                      <input type="text" id="form3Example1m1" class="form-control form-control-lg" />
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+                      <label class="form-label" for="form3Example1n1">비밀번호 확인</label>
+                      <input type="text" id="form3Example1n1" class="form-control form-control-lg" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example8">주소</label>
+                  <input type="text" id="form3Example8" class="form-control form-control-lg" />
+                </div>
+
+                <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+
+                  <h6 class="mb-0 me-4">성별: </h6>
+
+                  <div class="form-check form-check-inline mb-0 me-4">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="femaleGender"
+                      value="option1"
+                    />
+                    <label class="form-check-label" for="femaleGender">여성</label>
+                  </div>
+
+                  <div class="form-check form-check-inline mb-0 me-4">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="maleGender"
+                      value="option2"
+                    />
+                    <label class="form-check-label" for="maleGender">남성</label>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+
+                    <select class="select">
+                      <option value="11">서울</option>
+                      <option value="12">북서울</option>
+                      <option value="32">인천</option>
+                      <option value="41">대전</option>
+                      <option value="51">대구</option>
+                      <option value="71">부산</option>
+                    </select>
+
+                  </div>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example9">휴대전화번호</label>
+                  <input type="text" id="form3Example9" class="form-control form-control-lg" />
+                </div>
+
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example90">이메일</label>
+                  <input type="text" id="form3Example90" class="form-control form-control-lg" />
+                </div>
+
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example99">Course</label>  
+                  <input type="text" id="form3Example99" class="form-control form-control-lg" />
+                </div>
+
+                <div class="d-flex justify-content-end pt-3">
+                  <button type="button" class="btn btn-light btn-lg">새로고침</button>
+                  <button type="button" class="btn btn-color btn-lg ms-2">회원가입</button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>

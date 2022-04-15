@@ -6,7 +6,8 @@ import pymssql
 host = "211.117.60.37"         
 user = "ajis"          
 password = "@jis2021!"    
-database = "magesty"     
+database = "magesty"
+port = "1433"    
 
 # Database connection
 db=pymssql.connect(
