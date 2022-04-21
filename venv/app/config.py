@@ -1,5 +1,10 @@
+import os
+BASE_DIR = os.path.dirname(__file__)
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+
+SQLALCHEMY_DATABASE_URI = 'sqlite:///{}'.format(os.path.join(BASE_DIR, 'dbsplite.db'))
+SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 # Database parameter
 host = "211.117.60.37"         
